@@ -17,4 +17,4 @@ ask claude
 
 ## External hardware
 
-ask grok
+ask grok?
