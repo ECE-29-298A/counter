@@ -1,6 +1,7 @@
 module counter (
     input wire clk,
-    input wire rst_n
+    input wire rst_n,
+    output wire [7:0] countval
 );
 
 reg [7:0] counter;
@@ -29,5 +30,7 @@ always@(posedge clk or negedge rst_n) begin
         end
     end
 end
+
+assign countval = counter;
     
 endmodule
