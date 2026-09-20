@@ -1,0 +1,5 @@
+module tristate (
+    ports
+);
+    
+endmodule
