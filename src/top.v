@@ -1,17 +1,13 @@
-module counter (
-    input clk,
-    input reset,
-    input tristate,
-    output [7:0] count
+module top (
+    input  wire       clk,
+    input  wire       rst_n,
+    output wire [7:0] count_out
 );
 
-    reg [7:0] counter;
-    always@(posedge clk or posedge reset) begin
-        if(reset)
-            counter <= 8'b0;
-        else
-            counter <= counter +1;
-    end
+    counter u_counter (
+        .clk      (clk),
+        .rst_n    (rst_n),
+        .countval (count_out)
+    );
 
-    assign count = tristate ? 8'bz : counter;
 endmodule
